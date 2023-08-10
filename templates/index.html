@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Upload - Batman Theme</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Arial", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #222;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      width: 80vw; /* Set the width to 80% of the viewport width */
+      height: 80vh; /* Set the height to 80% of the viewport height */
+      padding: 20px;
+      background-color: #444;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+      border-radius: 5px;
+    }
+
+    h2 {
+      color: #ffbd2e;
+      text-align: center;
+      margin-top: 0;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: #ffbd2e;
+      font-weight: bold;
+    }
+
+    input[type="file"] {
+      margin-bottom: 10px;
+    }
+
+    input[type="submit"] {
+      background-color: #ffbd2e;
+      color: #222;
+      border: none;
+      padding: 15px 30px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #ffcc33;
+    }
+
+    .preview-image {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .preview-image img {
+      max-width: 100%;
+      border-radius: 5px;
+      border: 5px solid #ffbd2e;
+      box-shadow: 0 0 10px rgba(255, 189, 46, 0.8);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Upload an Image to Compress</h2>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <label for="image">Select an image:</label>
+      <input type="file" name="image" id="image" accept="image/*">
+      <br>
+      <input type="submit" value="Compress" onclick="alert('Compression is completed click OK to download')">
+    </form>
+
+    
+  </div>
+</body>
+</html>
