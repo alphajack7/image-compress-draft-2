@@ -1,0 +1,1 @@
+this uploads folder is used to store image temporarily
