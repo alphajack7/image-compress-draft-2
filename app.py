@@ -9,19 +9,22 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/upload', methods=['POST'])
+
+@app.route('/upload', methods=['POST','PUT','DELETE'])
 def upload():
     image_file = request.files['image']
     
     image_path = 'uploads/' + image_file.filename
     image_file.save(image_path)
+    
+    
 
     # Call your Python function here, passing the image path as an argument
-    
     output_path=compress_image(image_path,image_file.filename)
     print("Your file is compressed and is downloading...")
     
-    return send_file(output_path, as_attachment=True)
+    send_file(output_path, as_attachment=True)
+    return send_file(output_path, as_attachment=True),os.remove(output_path),os.remove(image_path)
     #return 'Image uploaded and processed successfully!'
     
 
