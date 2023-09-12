@@ -21,7 +21,6 @@ def upload():
 
     image_file.save(image_path)
     
-    
 
     # Calling Python function here, passing the image path and quality argument
     output_path=compress_image(image_path,image_file.filename,quality_value)
@@ -33,7 +32,7 @@ def upload():
     return send_file(output_path, as_attachment=True),os.remove(output_path),os.remove(image_path)
     #return 'Image uploaded and processed successfully!'
     
-    
+
 
 def compress_image(image_path,filename,value):
 
@@ -44,12 +43,6 @@ def compress_image(image_path,filename,value):
     image.save(output_path, optimize=True, quality=value)
     
     return output_path
-
-# Example usage
-#image_path = "/Users/atul/Desktop/image compression/image.jpg"  # Replace with your image file path
-#output_path = "/Users/atul/Desktop/IMG1.jpeg"  # Replace with desired output path
-#compression_level = 70  # Adjust the value as desired (0-100)
-
 
 
 
