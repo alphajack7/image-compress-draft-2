@@ -85,6 +85,9 @@
     <form action="/upload" method="POST" enctype="multipart/form-data">
       <label for="image">Select an image:</label>
       <input type="file" name="image" id="image" accept="image/*">
+      <label for="value">Quantity (between 10 and 95):</label>
+      <input type="number" name="quality" id="quality" value="50" min="10" max="95">
+      <br>
       <br>
       <input type="submit" value="Compress" onclick="alert('Compression is completed click OK to download')">
     </form>
